@@ -1,1 +1,32 @@
 /* CSS declarations go here */
+body {
+  background-color: #d9d9d9;
+}
+
+.center_auto {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.card {
+  display: block;
+}
+
+.station {
+  width: 400px;
+}
+
+.card {
+  background-color: #eee;
+  box-shadow: 0 2px 5px 1px #aaa;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+}
+
+.stationContainer {
+  
+}
