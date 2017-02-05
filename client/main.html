@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  {{> adviceForm}}
+  {{> formAdvice}}
 </body>
 
 <template name="hello">
@@ -34,16 +34,4 @@
     </ul>
     </div>
   {{/with}}
-</template>
-
-<template name="adviceForm">
-  <form>
-    <input type="text" data-field="fromStation">
-    <input type="text" data-field="toStation">
-    <input type="submit">
-  </form>
-  
-  {{#each advices}}
-    {{> advice2 advice=this}}
-  {{/each}}
 </template>
