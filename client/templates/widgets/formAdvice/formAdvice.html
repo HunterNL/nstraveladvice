@@ -1,11 +1,12 @@
 <template name="formAdvice">
+  {{>stationDataList id="frontPage_advice_autocomplete"}}
   <form>
-    <input type="text" data-field="fromStation">
-    <input type="text" data-field="toStation">
+    <input type="text" data-field="fromStation" list="frontPage_advice_autocomplete">
+    <input type="text" data-field="toStation" list="frontPage_advice_autocomplete">
     <input type="submit">
   </form>
 
   {{#each advices}}
-    {{> advice2 advice=this}}
+    {{> adviceSingle advice=this}}
   {{/each}}
 </template>

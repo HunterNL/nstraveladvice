@@ -7,7 +7,7 @@ function insertIntoStationsCollection(station) {
   Stations.insert(station)
 }
 
-Meteor.publish("stations_all",function(){
+Meteor.publish("stations.all",function(){
   return Stations.find();
 })
 

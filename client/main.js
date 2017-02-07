@@ -23,15 +23,15 @@ function selectAdvice(travelOppertunities) {
   throw new Error("no_oppertunities_selected");
 }
 
-var Stations = new Mongo.Collection("stations");
+import {Stations} from "/imports/stations";
 
 import './main.html';
 
 Template.hello.onCreated(function helloOnCreated() {
-  //this.subscribe('stations_all');
+  //this.subscribe('stations.all');
 });
 
-Template.advice2.helpers({
+Template.adviceSingle.helpers({
   debug(a) {
     console.log(this,a);
   },
