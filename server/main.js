@@ -18,7 +18,13 @@ function updateStationList() {
 }
 
 Meteor.startup(() => {
+  if(!Meteor.settings.NS_API_NAME) {
+    throw new Meteor.Error("api_name_missing","Missing NS API name")
+  }
   
+  if(!Meteor.settings.NS_API_PASSWORD) {
+    throw new Meteor.Error("api_password_missing","Missing NS API password");
+  }
 });
 
 // WebApp.connectHandlers.use("/api",function(req,res,next) {
@@ -27,6 +33,7 @@ Meteor.startup(() => {
   //res.end(JSON.stringify(getStationList()));
   // console.log("Done");
 // })
+// 
 
 var methods = {
   updateStationList,
