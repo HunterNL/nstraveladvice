@@ -1,14 +1,14 @@
-import {getJourneyStations, getTravelParts, getDepartureStation,getFirstTravelPart,getArrivalStation} from "/imports/advice";
-import moment from "moment";
+import { getJourneyStations, getTravelParts, getDepartureStation, getFirstTravelPart, getArrivalStation } from '/imports/advice';
+import moment from 'moment';
 
 Template.adviceListMain.onCreated(function onadviceListMainCreated() {
   console.log(this);
-  if(!this.data.advices) {
-    throw new Meteor.Error("adviceListMain_no_advices");
+  if (!this.data.advices) {
+    throw new Meteor.Error('adviceListMain_no_advices');
   }
 });
 
-Template.adviceListMain.onRendered(function onadviceListMainRendered() {
+Template.adviceListMain.onRendered(() => {
 
 }); 
 
@@ -25,7 +25,7 @@ Template.adviceListMain.helpers({
     return Template.currentData().advices;
   },
   
-  getStations(advice)  {
+  getStations(advice) {
     return getJourneyStations(advice);
   },
   
@@ -42,6 +42,6 @@ Template.adviceListMain.helpers({
   },
   
   formatDate(dateString) {
-    return moment(dateString).format("HH:mm")
-  }
+    return moment(dateString).format('HH:mm');
+  },
 });
