@@ -1,0 +1,29 @@
+{
+  "env" : {
+    "node" : true,
+    "browser" : true,
+    "es6" : true,
+    "meteor" : true
+  },
+  "root" : true,
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended"
+  ],
+  "settings": {
+    "import/resolver": "meteor"
+  },
+  "rules": {
+    "no-trailing-spaces" : 0,
+    "import/no-absolute-path" : 0,
+    "meteor/template-names" : 0,
+    "no-underscore-dangle" : [0,{"allow":"_id"}],
+    }
+}

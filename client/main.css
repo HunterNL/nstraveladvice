@@ -30,3 +30,19 @@ body {
 .stationContainer {
   
 }
+
+.advice {
+  width: 180px;
+  display: inline-flex;;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.advice_stationName {
+  font-weight: bold;
+}
+
+.advice_platform {
+  color: blue;
+}

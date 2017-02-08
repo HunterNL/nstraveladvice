@@ -1,4 +1,5 @@
 import {gatherFields} from "/imports/harvest.js";
+// import testData from "/testData/api_advice.json";
 
 function hasTransfers(oppertunity) {
   return oppertunity.AantalOverstappen !== "0"
@@ -10,7 +11,7 @@ function hasNoTransfers(oppertunity) {
 
 
 Template.formAdvice.onCreated(function onformAdviceCreated() {
-  this.advices = new ReactiveVar();
+  this.advices = new ReactiveVar([]);
 });
 
 Template.formAdvice.onRendered(function onformAdviceRendered() {
@@ -27,7 +28,7 @@ Template.formAdvice.events({
       if(err) throw err;
       
       console.log("Set advices to ",res);
-      tmp.advices.set(res.filter(hasNoTransfers));
+      tmp.advices.set(res);
     })
   }
 });
