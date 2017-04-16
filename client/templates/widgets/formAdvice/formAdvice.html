@@ -1,8 +1,8 @@
 <template name="formAdvice">
   {{>stationDataList id="frontPage_advice_autocomplete"}}
   <form>
-    <input type="text" data-field="fromStation" list="frontPage_advice_autocomplete">
-    <input type="text" data-field="toStation" list="frontPage_advice_autocomplete">
+    <div><input class="form_field_primary" type="text" data-field="fromStation" list="frontPage_advice_autocomplete"></div>
+    <div><input class="form_field_primary" type="text" data-field="toStation" list="frontPage_advice_autocomplete"></div>
     <input type="submit">
   </form>
 
