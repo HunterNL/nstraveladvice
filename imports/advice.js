@@ -1,3 +1,11 @@
+function trimArray(array, trimCount) {
+  return array.splice(trimCount, array.length - trimCount);
+}
+
+function omitArrayHeadAndTail(array) {
+  return trimArray(array, 1);
+}
+
 function purePop(array) {
   return array.slice(1, array.length);
 }
@@ -6,10 +14,7 @@ function getFirstStation(travelPart) {
   return travelPart.ReisStop[0];
 }
 
-export function getTransferStations(advice) {
-  const { ReisDeel } = advice;
-  if (!Array.isArray(ReisDeel)) return []; // Reisdeel is not an array, thus no transfers, thus no tranfer stations
-  
+export function getTransferStations(stops) {
   const travelParts = purePop(ReisDeel);
   
   return travelParts.map(getFirstStation);

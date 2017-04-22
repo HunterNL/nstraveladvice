@@ -2,7 +2,6 @@ import { getJourneyStations, getTravelParts, getDepartureStation, getFirstTravel
 import moment from 'moment';
 
 Template.adviceListMain.onCreated(function onadviceListMainCreated() {
-  console.log(this);
   if (!this.data.advices) {
     throw new Meteor.Error('adviceListMain_no_advices');
   }
@@ -18,13 +17,13 @@ Template.adviceListMain.events({
 
 Template.adviceListMain.helpers({
   debug(a) {
-    console.log(a);
+    
   },
   
   advices() {
     return Template.currentData().advices;
   },
-  
+  /*
   getStations(advice) {
     return getJourneyStations(advice);
   },
@@ -43,5 +42,5 @@ Template.adviceListMain.helpers({
   
   formatDate(dateString) {
     return moment(dateString).format('HH:mm');
-  },
+  },*/
 });
