@@ -1,13 +1,5 @@
 <template name="adviceListMain">
   {{#each advices}}
-    <div class="card advice">
-      {{formatDate ActueleVertrekTijd}}
-      <div class="advice_stationName">{{#with departureStation this}}{{Naam}}{{/with}}</div>
-      {{#each travelParts this}}
-        <div class="advice_type">{{VervoerType}}</div>
-        <div class="advice_stationName">{{#with arrivalStationTravelPart this}}{{Naam}}{{/with}}</div>
-      {{/each}}
-      <div>{{formatDate ActueleAankomstTijd}}</div>
-    </div>
+    {{>journey journey=this}}
   {{/each}}
 </template>

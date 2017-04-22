@@ -1,0 +1,30 @@
+<template name="journey">
+  
+  <div class="journeycard journeycard-departue">
+  {{#with departure}}
+    Spoor: {{track}}
+    Vertrektijd: {{formatTime time}}
+    Richting: {{trainDestination}}
+    Type: {{trainType}}
+  {{/with}}
+  </div>
+  
+  {{#each transfers}}
+    <div class="journeycard journeycard-transfer">
+      {{arrivalTrack}}
+      {{transferTime}}
+      {{departureTrack}}
+      {{formatTime departureTime}}
+      {{trainDirection}}
+      {{trainType}}
+    </div>
+  {{/each}}
+  
+  <div class="journeycard journeycard-arrival">
+  {{#with arrival}}
+    Station: {{trainDestination}}
+    Aankomsttijd: {{formatTime arrivalTime}}
+  {{/with}}
+  </div>
+    
+</template>
