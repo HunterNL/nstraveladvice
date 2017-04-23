@@ -1,0 +1,26 @@
+.journeycard {
+  @extend %card-shadow;
+  background-color: white;
+  margin-bottom: $medium;
+  display: inline-block;
+  padding: $tiny;
+}
+
+.journeycard-departure {
+  
+}
+
+.journeycard-departure-station {
+}
+
+.journeycard-departure-place {
+  
+}
+
+.journeycard-departure-train {
+  margin-bottom: $large;
+}
+
+.journeycard-transfer-station {
+
+}

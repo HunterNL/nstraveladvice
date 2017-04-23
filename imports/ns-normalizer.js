@@ -3,7 +3,8 @@ import moment from 'moment';
 const statusMap = {
   'VOLGENS-PLAN': 'AS_PLANNED',
   'VERTRAAGD': 'DELAYED', //eslint-disable-line
-  'GEWIJZIGD': "PLAN_CHANGED" //eslint-disable-line
+  'GEWIJZIGD': "PLAN_CHANGED", //eslint-disable-line
+  'NIET-OPTIMAAL' : "UNKNOWN?", //eslint-disable-line
 };
 
 

@@ -12,6 +12,16 @@ function hasNoTransfers(oppertunity) {
 
 Template.formAdvice.onCreated(function onformAdviceCreated() {
   this.advices = new ReactiveVar([]);
+
+  
+  const self = this;
+  Meteor.call('getTravelAdvise', {fromStation:"LEDN",toStation:"Maastricht"}, (err, res) => {
+    if (err) throw err;
+    
+    console.log('Set advices to ', res);
+    self.advices.set(res);
+  });
+  
 });
 
 Template.formAdvice.onRendered(() => {

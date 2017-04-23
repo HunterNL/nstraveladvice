@@ -20,15 +20,21 @@ function formatJourneyPart(journeyPart) {
     track: journeyPart.stops[0].track.track,
     time: journeyPart.stops[0].time,
     trainDestination: arrayLast(journeyPart.stops).name,
+    departureStation: journeyPart.stops[0].name,
     trainType: journeyPart.type,
     arrivalTime: arrayLast(journeyPart.stops).time,
   };
 }
 
 function formatTransfer(lastPart, nextPart) {
+  const transferTimeMiliseconds = (nextPart.stops[0].time - arrayLast(lastPart.stops).time);
+  const transferTime = Math.floor(transferTimeMiliseconds / (1000 * 60));
+  
   return {
+    station: nextPart.stops[0].name,
     arrivalTrack: arrayLast(lastPart.stops).track.track,
-    transferTime: 404,
+    transferTime,
+    departureTime: nextPart.stops[0].time,
     departureTrack: nextPart.stops[0].track.track,
     trainDirection: arrayLast(nextPart.stops).name,
     trainType: nextPart.type,
@@ -36,7 +42,6 @@ function formatTransfer(lastPart, nextPart) {
 }
 
 function formatTransfers(journey) {
-  console.log(combine(journey.journeyParts, formatTransfer));
   return combine(journey.journeyParts, formatTransfer);
 }
 /*
