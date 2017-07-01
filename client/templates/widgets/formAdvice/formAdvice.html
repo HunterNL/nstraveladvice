@@ -6,5 +6,10 @@
     <input type="submit">
   </form>
 
-  {{>adviceListMain advices=advices}}
+  {{>adviceListMain advices=advices selectedAdvice=selectedAdvice}}
+  
+  {{#with selectedAdvice.get}}
+    {{>journey}}
+  {{/with}}
+    
 </template>

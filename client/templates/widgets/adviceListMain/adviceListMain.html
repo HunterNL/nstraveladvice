@@ -1,5 +1,5 @@
 <template name="adviceListMain">
   {{#each advices}}
-    <div>{{>journeySummary journey=this}}</div>
+    <div data-action="select-advice">{{>journeySummary journey=this}}</div>
   {{/each}}
 </template>

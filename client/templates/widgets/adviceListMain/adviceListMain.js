@@ -9,7 +9,9 @@ Template.adviceListMain.onRendered(() => {
 }); 
 
 Template.adviceListMain.events({
- 
+  'click [data-action=select-advice]': function (event, templateInstance) {
+    templateInstance.data.selectedAdvice.set({ journey: this });
+  },
 });
 
 Template.adviceListMain.helpers({

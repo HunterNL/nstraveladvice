@@ -12,7 +12,7 @@ function hasNoTransfers(oppertunity) {
 
 Template.formAdvice.onCreated(function onformAdviceCreated() {
   this.advices = new ReactiveVar([]);
-
+  this.selectedAdvice = new ReactiveVar();
   
   const self = this;
   
@@ -44,5 +44,9 @@ Template.formAdvice.events({
 Template.formAdvice.helpers({
   advices() {
     return Template.instance().advices.get();
+  },
+  
+  selectedAdvice() {
+    return Template.instance().selectedAdvice;
   },
 });
