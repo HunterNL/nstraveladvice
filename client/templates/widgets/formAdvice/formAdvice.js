@@ -15,10 +15,10 @@ Template.formAdvice.onCreated(function onformAdviceCreated() {
 
   
   const self = this;
+  
+  // For easy developemnt for now
   Meteor.call('getTravelAdvise', {fromStation:"LEDN",toStation:"Maastricht"}, (err, res) => {
     if (err) throw err;
-    
-    console.log('Set advices to ', res);
     self.advices.set(res);
   });
   
@@ -36,8 +36,6 @@ Template.formAdvice.events({
     
     Meteor.call('getTravelAdvise', options, (err, res) => {
       if (err) throw err;
-      
-      console.log('Set advices to ', res);
       tmp.advices.set(res);
     });
   },

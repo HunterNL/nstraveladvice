@@ -1,5 +1,5 @@
 <head>
-  <title>nsrailadvice</title>
+  <title>Rawrplanner</title>
 </head>
 
 <body>
@@ -7,33 +7,3 @@
     {{> formAdvice}}
   </div>
 </body>
-
-<template name="hello">
-  <div class="stationContainer center_auto">
-  {{#each stations}}
-    <div>
-      <div class="card station">
-        {{Namen.Lang}}
-      </div>
-    </div>
-  {{/each}}
-  </div>
-</template>
-
-<template name="adviceSingle">
-  {{#with advice}}
-    <div class="card">
-      
-      {{formatDate ActueleVertrekTijd}}
-      {{ReisDeel.VervoerType}}
-      <ul>
-      
-      {{#each ReisDeel.ReisStop}}
-        <li>{{Naam}}</li>
-      {{/each}}
-      
-      {{ActueleReisTijd}}
-    </ul>
-    </div>
-  {{/with}}
-</template>
