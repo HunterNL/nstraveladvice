@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import moment from 'moment';
+import "../imports/client/stations";
 
 function toObject(array) {
   return array.reduce((acc, cur) => {
@@ -22,8 +23,6 @@ function selectAdvice(travelOppertunities) {
   
   throw new Error('no_oppertunities_selected');
 }
-
-import { Stations } from '/imports/stations';
 
 import './main.html';
 
