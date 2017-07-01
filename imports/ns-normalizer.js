@@ -1,12 +1,16 @@
 import moment from 'moment';
 
+/* eslint-disable quote-props */
 const statusMap = {
   'VOLGENS-PLAN': 'AS_PLANNED',
-  'VERTRAAGD': 'DELAYED', //eslint-disable-line
-  'GEWIJZIGD': "PLAN_CHANGED", //eslint-disable-line
-  'NIET-OPTIMAAL' : "UNKNOWN?", //eslint-disable-line
-  'NIEUW': "NEW",
+  'VERTRAAGD': 'DELAYED', 
+  'GEWIJZIGD': 'PLAN_CHANGED', 
+  'NIET-OPTIMAAL': 'NOT_OPTIMAL', 
+  'NIEUW': 'NEW',
+  'NIET-MOGELIJK': 'IMPOSSIBLE',
+  'GEANNULEERD': 'CANCELLED',
 };
+/* eslint-enable quote-props */
 
 
 export function normalizeBoolean(stringBool) {
