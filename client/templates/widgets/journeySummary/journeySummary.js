@@ -1,30 +1,19 @@
 import moment from 'moment';
 import { formatJourneyPart, formatTransfers } from '../../../../imports/journey';
 
-/*
-{{arrivalTrack}}
-{{transferTime}}
-{{departureTrack}}
-{{departureTime}}
-{{trainDirection}}
-{{trainType}}
- */
-
-Template.journey.onCreated(function onjourneyCreated() {
-  if (!this.data.journey) {
-    throw new Meteor.Error('journey template missing journey data');
-  }
+Template.journeySummary.onCreated(() => {
+  
 });
 
-Template.journey.onRendered(() => {
+Template.journeySummary.onRendered(() => {
 
 });
 
-Template.journey.events({
+Template.journeySummary.events({
 
 });
 
-Template.journey.helpers({
+Template.journeySummary.helpers({
   departure() {
     return formatJourneyPart(this.journey.journeyParts[0]);
   },
@@ -34,7 +23,7 @@ Template.journey.helpers({
   },
   
   arrival() {
-    const journeyParts = this.journey.journeyParts;
+    const journeyParts = (this.journey.journeyParts);
     return formatJourneyPart(journeyParts[journeyParts.length - 1]);
   },
   

@@ -1,0 +1,26 @@
+<template name="journeySummary">
+  <div class="journeycard">
+    <div class="journeycard-departure">
+    {{#with departure}}
+      <div class="journeycard-departure-station">
+        {{departureStation}}
+        {{formatTime departureTime}}
+      </div>
+      
+    {{/with}}
+    </div>
+    
+    <div class="journeycard-transfer">
+      {{#with journey}}
+        {{transferCount}} {{liveTravelTime}}
+      {{/with}}
+    </div>
+    
+    <div class="journeycard-arrival">
+    {{#with arrival}}
+      {{trainDestination}}
+      {{formatTime arrivalTime}}
+    {{/with}}
+    </div>
+  </div>
+</template>

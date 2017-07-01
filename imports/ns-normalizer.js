@@ -3,11 +3,11 @@ import moment from 'moment';
 /* eslint-disable quote-props */
 const statusMap = {
   'VOLGENS-PLAN': 'AS_PLANNED',
-  'VERTRAAGD': 'DELAYED', 
-  'GEWIJZIGD': 'PLAN_CHANGED', 
-  'NIET-OPTIMAAL': 'NOT_OPTIMAL', 
-  'NIEUW': 'NEW',
-  'NIET-MOGELIJK': 'IMPOSSIBLE',
+  'VERTRAAGD': 'DELAYED',  
+  'GEWIJZIGD': 'PLAN_CHANGED',  // Temporary new route/timing
+  'NIET-OPTIMAAL': 'NOT_OPTIMAL', // /probably/ just AS_PLANNED, but there's a faster train for the given journey
+  'NIEUW': 'NEW', // unscheduled extra train
+  'NIET-MOGELIJK': 'IMPOSSIBLE', // Connection missed due to delay?
   'GEANNULEERD': 'CANCELLED',
 };
 /* eslint-enable quote-props */
@@ -80,14 +80,15 @@ export function normalizeJourneyPart(journey) {
 export function normalizeJourneyOption(option) {
   return {
     transferCount: parseInt(option.AantalOverstappen, 10),
-    
-    liveArrivalTime: parseTime(option.ActueleAankomstTijd),
-    liveTravelTime: parseTime(option.ActueleReisTijd),
+
+    liveTravelTime: option.ActueleReisTijd,
     liveDepartureTime: parseTime(option.ActueleVertrekTijd),
+    liveArrivalTime: parseTime(option.ActueleAankomstTijd),
     
-    plannedArrivalTime: parseTime(option.GeplandeAankomstTijd),
-    plannedTravelTime: parseTime(option.GeplandeReisTijd),
+    plannedTravelTime: option.GeplandeReisTijd,
     plannedDepartureTime: parseTime(option.GeplandeVertrekTijd),
+    plannedArrivalTime: parseTime(option.GeplandeAankomstTijd),
+    
     
     optimal: normalizeBoolean(option.Optimaal),
     
