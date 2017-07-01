@@ -5,6 +5,7 @@ const statusMap = {
   'VERTRAAGD': 'DELAYED', //eslint-disable-line
   'GEWIJZIGD': "PLAN_CHANGED", //eslint-disable-line
   'NIET-OPTIMAAL' : "UNKNOWN?", //eslint-disable-line
+  'NIEUW': "NEW",
 };
 
 
