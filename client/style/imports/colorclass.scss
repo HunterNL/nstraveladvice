@@ -1,0 +1,11 @@
+@import "color";
+
+.color-primary {
+  background-color: $primary;
+  color: $primary-text;
+}
+
+.color-primary-light {
+  background-color: $primary-light;
+  color: $primary-light-text;
+}

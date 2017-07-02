@@ -1,9 +1,16 @@
 <template name="formAdvice">
   {{>stationDataList id="frontPage_advice_autocomplete"}}
-  <form>
-    <div><input class="form_field_primary" type="text" data-field="fromStation" list="frontPage_advice_autocomplete"></div>
-    <div><input class="form_field_primary" type="text" data-field="toStation" list="frontPage_advice_autocomplete"></div>
-    <input type="submit">
+  <form class="color-primary">
+    <div class="inset-tiny">
+      <label class="stack-tiny"><span class="material_input_label">From</span>
+        <div><input class="form_field_primary material_text_field stack-small" type="text" data-field="fromStation" list="frontPage_advice_autocomplete"></div>
+      </label>
+      
+      <label class="stack-tiny"><span class="material_input_label">To</span>
+        <div><input class="form_field_primary material_text_field stack-small" type="text" data-field="toStation" list="frontPage_advice_autocomplete"></div>
+      </label>
+    </div>
+    <input type="submit" value='Plan' class="material_button color-primary-light" style="margin-left:4px">
   </form>
 
   {{>adviceListMain advices=advices selectedAdvice=selectedAdvice}}

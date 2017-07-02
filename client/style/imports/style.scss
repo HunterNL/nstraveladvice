@@ -24,3 +24,15 @@
 .journeycard-transfer-station {
 
 }
+
+.primary-list {
+  
+  .list-item {
+    border-bottom: 1px solid black;
+  }
+  
+  .list-item:last-child {
+    border-bottom: none;
+  }
+  
+}

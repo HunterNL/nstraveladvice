@@ -1,0 +1,12 @@
+@import "units";
+
+@each $unit, $value in $unit-map {
+  .stack-#{$unit} {
+    margin-bottom: $value;
+  }
+
+  .inset-#{$unit} {
+    padding: $value;
+  }
+}
+

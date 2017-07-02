@@ -1,5 +1,7 @@
 <template name="adviceListMain">
+  <div class="primary-list">
   {{#each advices}}
-    <div data-action="select-advice">{{>journeySummary journey=this}}</div>
+    {{>journeySummary journey=this}}
   {{/each}}
+  </div>
 </template>
