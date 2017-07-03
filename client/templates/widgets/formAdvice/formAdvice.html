@@ -13,10 +13,19 @@
     <input type="submit" value='Plan' class="material_button color-primary-light" style="margin-left:4px">
   </form>
 
-  {{>adviceListMain advices=advices selectedAdvice=selectedAdvice}}
-  
-  {{#with selectedAdvice.get}}
-    {{>journey}}
-  {{/with}}
-    
+  <div class="navcolumn_container {{navcolumn_active_class}}">
+    <div class="navcolumn_content">
+      <div class="navcolumn">
+        {{>adviceListMain advices=advices selectedAdvice=selectedAdvice}}
+      </div>
+      
+      <div class="navcolumn">
+        {{#let selectedJourney=selectedAdvice.get}}
+          {{#if selectedJourney}}
+            {{>journey selectedJourney}}
+          {{/if}}
+        {{/let}}
+      </div>
+    </div>
+  </div>
 </template>

@@ -1,0 +1,21 @@
+.navcolumn_container {
+  overflow: hidden;
+  
+  &.active .navcolumn_content {
+    transform:translateX(-50%);
+  }
+  
+  .navcolumn_content {
+    transition: transform .5s;
+    position: relative;
+    font-size: 0;
+    width: 200%;
+    
+    .navcolumn {
+      vertical-align: top;
+      display: inline-block;
+      font-size: initial;
+      width: 50%;
+    }
+  }
+}

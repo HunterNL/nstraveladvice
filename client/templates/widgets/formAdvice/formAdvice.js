@@ -17,11 +17,10 @@ Template.formAdvice.onCreated(function onformAdviceCreated() {
   const self = this;
   
   // For easy developemnt for now
-  Meteor.call('getTravelAdvise', {fromStation:"LEDN",toStation:"Maastricht"}, (err, res) => {
+  Meteor.call('getTravelAdvise', { fromStation: 'LEDN', toStation: 'Maastricht' }, (err, res) => {
     if (err) throw err;
     self.advices.set(res);
   });
-  
 });
 
 Template.formAdvice.onRendered(() => {
@@ -48,5 +47,9 @@ Template.formAdvice.helpers({
   
   selectedAdvice() {
     return Template.instance().selectedAdvice;
+  },
+  
+  navcolumn_active_class() {
+    return (Template.instance().selectedAdvice.get() ? 'active' : '');
   },
 });
