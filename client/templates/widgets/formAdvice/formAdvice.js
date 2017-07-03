@@ -21,6 +21,12 @@ Template.formAdvice.onCreated(function onformAdviceCreated() {
     if (err) throw err;
     self.advices.set(res);
   });
+  
+  window.addEventListener('popstate', (event) => {
+    console.log(event);
+    this.selectedAdvice.set(null);
+    console.log(this.selectedAdvice.get());
+  });
 });
 
 Template.formAdvice.onRendered(() => {
