@@ -1,6 +1,10 @@
 import { getStationList } from '../imports/ns';
 
-const stations = getStationList();
+function isInTheNetherlands(station) {
+  return station.Land === 'NL';
+}
+
+const stations = getStationList().filter(isInTheNetherlands);
 const PATH = Meteor.settings.public.STATION_DOWNLOAD_PATH;
 
 const DAY = 60 * 60 * 24;
