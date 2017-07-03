@@ -8,6 +8,7 @@ const statusMap = {
   'NIET-OPTIMAAL': 'NOT_OPTIMAL', // /probably/ just AS_PLANNED, but there's a faster train for the given journey
   'NIEUW': 'NEW', // unscheduled extra train
   'NIET-MOGELIJK': 'IMPOSSIBLE', // Connection missed due to delay?
+  'OVERSTAP-NIET-MOGELIJK': 'IMPOSSIBLE-TRANSFER',
   'GEANNULEERD': 'CANCELLED',
 };
 /* eslint-enable quote-props */

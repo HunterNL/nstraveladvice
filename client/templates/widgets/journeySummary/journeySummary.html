@@ -4,6 +4,10 @@
       {{formatTime departure.time}} - {{formatTime arrival.arrivalTime}} <span style="opacity:.5"> {{journey.liveTravelTime}} </span>
     </div>
     
-    <div>{{journey.transferCount}} transfers {{#each transfers}} <span style="opacity:.5">{{transferTime}} min</span> {{/each}}</div>
+    <div>
+      {{journey.transferCount}} transfers {{#each transfers}}
+        <span class="info_extra {{transferWarning transferTime}}">{{transferTime}} min </span>
+      {{/each}}
+    </div>
   </div>
 </template>

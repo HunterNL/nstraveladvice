@@ -1,6 +1,11 @@
 import moment from 'moment';
 import { formatJourneyPart, formatTransfers } from '../../../../imports/journey';
 
+const CLASS_NORMAL = '';
+const CLASS_LOW_TRANSFER_TIME = 'text-color-warning';
+const SHORT_CONNECTION_MINUTES = 5;
+
+
 Template.journeySummary.onCreated(() => {
   
 });
@@ -29,5 +34,9 @@ Template.journeySummary.helpers({
   
   formatTime(date) {
     return moment(date).format('HH:mm');
+  },
+  
+  transferWarning(minutes) {
+    return (minutes < SHORT_CONNECTION_MINUTES ? CLASS_LOW_TRANSFER_TIME : CLASS_NORMAL);
   },
 });
